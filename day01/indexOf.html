@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       var input = prompt("请输消息内容");
+       var i = input.indexOf("我操啊");
+       if (i != -1) {
+            document.write(`<h1 style="color:#666">存在敏感词汇，不能发送</h1>`)
+       } else {
+           document.write(`<h1 style="color:green">然哥说：${input}</h1>`)
+       }
+   </script>
+</body>
+</html>
