@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 鱼和熊掌不可兼得
+        // match不加g只能查找第一个关键字并返回内容和下标，加g只能返回所有关键字，不能返回位置
+       let str = '小亮：小红是我的朋友。小然：朋友！小红是我的';
+    //    匹配所有小开头的人名字
+       let arr = str.match(/小[\u4e00-\u9fa5]/g);
+       document.write(arr);
+    </script>
+</body>
+</html>

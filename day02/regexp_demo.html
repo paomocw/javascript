@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //写死的正则表达式  防 var kws = ["明月","青天","白鹭"];
+        // let kws = ["明月","青天","白鹭","泡沫"];
+        // //用户输入内容
+        // let input = prompt("请输入内容");
+        // //match查找所有关键字  写死的规则 后期增加字符 规则也现需要更新 不好维护
+        // let arr = input.match(/明月|晴天|白鹭/ig);
+        // console.log(arr);
+        
+        // //判断用户输入是否存在敏感字
+        // if (arr != null) {
+        //     document.write(`存在关键字${arr}`);
+        // } else {
+        //     document.write("发送成功")
+        // }
+
+        //动态生成正则表达式  
+        // (()=>{
+        //     
+        //     let kws = ["明月","青天","白鹭","泡沫"];
+        //     //用户输入内容
+        //     let input = prompt("请输入内容");
+        //     //动态生成规则 把数组关键字 替换成字符串  明月|青天|白鹭
+        //     // console.log(kws.join("|"));
+        //     let arr = input.match(new RegExp(kws.join("|"),"g"));
+        //      if (arr != null) {
+        //     document.write(`存在关键字${arr}`);
+        // } else {
+        //     document.write("发送成功")
+        // }
+        // })();
+
+        //验证字符串格式  手机号
+        (()=> {
+            //验证手机
+            let input = prompt("请输入内容");
+            //验证格式是否符合
+            // let reg = /1[3-9]\d{9}/;  这样写 只要开头部分满足规则  后面多了字符也不会报错 不符合要求
+            let reg = /^1[3-9]\d{9}$/;
+            //判断
+            if (reg.test(input)) {
+                console.log("格式正确");
+            } else {
+                console.log("格式错误");
+            }
+        })()
+    </script>
+</body>
+</html>

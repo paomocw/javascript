@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求:把字符串翻转  翻转函数是数组旗下 字符串不可用 
+        //需要把字符串打散成字符数组再去调用reverse函数
+        //翻转后 可以使用数组下的join()把数组拼接成字符串
+        let str = 'hellowrold';
+        //字符串-->数组
+        let arr = str.split("");
+       //reverse翻转
+       let rever = arr.reverse();
+       //数组拼接成字符串
+       str = rever.join(",");
+       console.log(str);
+       
+
+       //jion("分隔符") 返回值 字符串  可以判断数组是否是空
+       let arr1 = [1];
+       console.log(arr1.length == 0);
+       console.log(arr1.join("")==="");
+    </script>
+</body>
+</html>

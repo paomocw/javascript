@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '    cheng   wei    ';
+        //去除首字母空格函数
+        function ltrim (str) {
+            return str.replace(/^\s+/,"");
+        }
+        //去除尾部
+        function rtrim (str) {
+            return str.replace(/\s+$/,"");
+        }
+        //前后都去
+        function trim(str) {
+            //正则表达式默认只会匹配一个值 需要添加g 匹配全部
+            return str.replace(/^\s+|\s+$/g,"")
+        }
+        console.log(ltrim(str));
+        console.log(rtrim(str));
+        console.log(trim(str));
+        //es6-es7封装好的函数
+       console.log(str.trimLeft());
+       console.log(str.trimRight());
+       console.log(str.trim());
+       
+        
+    </script>
+</body>
+</html>

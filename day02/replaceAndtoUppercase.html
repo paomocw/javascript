@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'wo shi cheng wei';
+        //每个首字母大写 需要替换
+        str = str.replace(/\b[a-z]/ig,function(keyword){
+            // 正则每次找到关键字都会调用此函数并且把查找到的关键字传输给keyword
+           return keyword.toUpperCase();
+        });
+        console.log(str);
+        console.log(str.toLocaleUpperCase());
+        console.log(str.toLocaleLowerCase());
+        
+        //回调函数 当主函数内容执行完毕后 会看下是否有回调任务 有则执行 
+    </script>
+</body>
+</html>

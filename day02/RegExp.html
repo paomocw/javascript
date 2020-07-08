@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //正则表达式对象
+        // let reg = new RegExp("字符串格式语句")
+        let arr = [1,2,3,4];
+        // console.log(arr.join("|"));
+        let input = prompt("请输入内容");
+        //通过实例化正则表达式拦住关键词
+        // let reg = new RegExp(arr.join("|"));
+        let reg = input.match(new RegExp(arr.join("|")));
+        if (reg != null) {
+            console.log("存在敏感词");
+        }    else{
+            console.log("发送成功");
+        }
+    </script>
+</body>
+</html>

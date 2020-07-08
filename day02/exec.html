@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //低级查找 只能查找第一个敏感字和位置
+        var str="老师:请用 小红 我的 朋友 造句。小亮:小红是我的朋友。小然:朋友！小红是我的！";
+        //查小x出现的内容和位置 match只能查一个
+        // console.log(str.match(/小[\u4e00-\u9fa5]/));
+        // console.log(str.match(/小[\u4e00-\u9fa5]/));
+        // console.log(str.match(/小[\u4e00-\u9fa5]/));
+        // console.log(str.match(/小[\u4e00-\u9fa5]/));  都是重复出现第一个
+
+        //高级查找 reg.exec(str) 可以查找下一个  找不到返回null
+        let reg = /小[/u4e00-\u9fa5]/g;//必须加g
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str));每一次的执行 都是找下一个 不会重复  找不到null
+        
+        //代码都是重复 用循环 for do.while  while
+        do {
+            //先判断是否是null
+            var arr = reg.exec(str);
+            if (arr != null) {
+                console.log(arr);
+                
+            }
+        }while(arr!=null);
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //可以返回内容 两种方式
+        //只返回第一个敏感词的内容和位置: 
+        let str = 'wo shi cheng wei you can you up';
+        //查cheng出现的位置 需返回内容 与 下表
+        let arr = str.match(/cheng1/);
+        //如果找不到关键字返回值 null 
+        console.log(arr);
+        
+        //需求：用户输入内容 检测是否存在关键字
+        // (function(){
+        //     let input = prompt("请输入内容");
+        //     //查找用户输入的看是否存在敏感词  我草。。。
+        //     let result = input.match(/([我卧]|w(o)?)\s*([草操艹槽曹]|c(ao)?)/);
+        //     //返回值null 说明找不到
+        //     if (result != null) {
+        //         document.write(`第${result['index']}个字，存在关键字:"${result[0]}"不能发送`)
+        //     } else {
+        //         document.write("发送成功")
+        //     }
+        // })()
+
+
+        //match查找所有敏感词  不返回位置 
+        // (function() {
+        //     let str = '老师说：用 小红 朋友 我的 是造句，小亮：小红是我的朋友。小然：朋友：小红是我的';
+        //     //用match查找所有
+        //     let arr = str.match(/小[\u4e00-\u9fa5]/g);
+        //    document.write(arr)
+        //    console.log(arr);
+        //    //返回值：存在 数组所有内容   不带位置
+        // })()
+
+
+        //需求 查找所有敏感词 最终显示 查找了多少个
+        (function(){
+            let user = prompt("请输入内容");
+            let arr = user.match(/([我卧]|w(o)?)\s*([槽艹操草]|c(ao)?)/ig);
+            // console.log("一共匹配了" + arr.length + "个");
+            //返回值可能是null 使用时务必特殊处理 避免报错 
+            arr = arr == null ? 0 : arr.length;
+            console.log(arr);
+            // if (arr != null) {
+            //     console.log(`一共匹配到${arr.length}个敏感词`);
+            // } else {
+            //     console.log(`一共匹配了0个`);
+            // }
+        })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '老师：用 小红 朋友 我的 是 组词，小亮：小红是我的朋友。小然：朋友，小红是我的';
+        //replace只能替换唯一值
+        str = str.replace(/小[\u4e00-\u9fa5]/g,"**");
+        document.write(str)
+    </script>
+</body>
+</html>

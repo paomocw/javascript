@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" onblur="input_value()" type="text" placeholder="请输入注册密码">
+    <span id="s1"></span>
+    <script>
+        //用户失去焦点时 获取用户输入的内容
+        function input_value () {
+            let pwd = input.value;
+            //纯小写英文提示 ：不能纯英文
+            let result = pwd.search(/^(?![a-z0-9]+$)(?![A-Za-z]+$)[0-9A-Za-z]+$/);
+            console.log(result);
+            
+            //纯数字提示： 不能纯数字
+            //不能带有特殊符号
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //替换字符 两种方式
+        //1；简单替换 ：将所有找到的敏感词都替换成统一的值
+        //需求：把所有小x字符替换成**
+        let str = "老师:请用 小红 我的 朋友 造句。小亮:小红是我的朋友。小然:朋友！小红是我的！";
+        //新值覆盖旧值
+       str = str.replace(/小[\u4e00-\u9fa5]/g,"**");//g 
+        // console.log(str); 字符串是不可变 所以字符串的api不可坑改变原字符串 需要用变量接收新值 或者 用原字符串接收新的值
+        console.log(str);
+        
+        (()=>{
+            //高级替换，根据不同的敏感词替换不同的值
+            /*
+                1.replace会用正则去str找敏感词
+                2.查到敏感字会自动调用回调函数
+                3.每次调用回调函数，会把本次找到的敏感字作为回调函数的形参传输给函数
+                4.回调函数内部，根据不同的形参动态的返回新值给replace
+                5.replace会自动把函数的返回值替换成关键字的位置
+            */
+            //需求：首字母大写
+            let str = 'you can you up';
+            str = str.replace(/\b[a-z]/ig,function(keyword){
+                    return keyword.toUpperCase();
+            });
+           console.log(str);
+           
+        })();
+
+        (()=>{
+            //需求：把首字母和尾部字母空字符删除
+            //删除首字母的空字符
+            function ltrim(str){
+                return str.replace(/^\s+/,"");
+            }
+            console.log(ltrim("    zhang    wei    "));
+            //删除尾部字母的空字符
+            function rtrim(str) {
+                return str.replace(/\s+$/,"");
+            }
+            console.log(rtrim("    zhang    wei    "));
+            //首尾字母前的空字符全部替换空
+            function trim(str) {
+                return str.replace(/^\s+|\s+$/g,"");
+            }
+            console.log(trim("    zhang    wei    "));
+
+            //es6,7提供的api 可以删除空字符
+            console.log("   cheng  wei  ".trimLeft());
+            console.log("    cheng   wei   ".trimRight());
+            console.log("    cheng   wei   ".trim());
+            //去掉所有空字符
+            console.log(
+                "    cheng   wei   ".replace(/\s*/g,"")
+            );
+            
+            
+        })();
+    </script>
+</body>
+</html>

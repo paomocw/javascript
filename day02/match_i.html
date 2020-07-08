@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //用户输入内容
+        let input = prompt("请输入内容");
+        //查找关键字 并且返回第一个关键字内容与下标
+        let arr = input.match(/([我卧]|w(o)?)\s*([草操艹草曹]|c(ao)?)/i);
+        if (arr != null) {
+            document.write(`您所输入的内容：${input},存在敏感词，第${arr["index"]}个字中，敏感词${arr["0"]}`);
+        } else {
+            document.write(`然哥说：${input}`)
+        }
+    </script>
+</body>
+</html>

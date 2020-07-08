@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //正则表达式匹配敏感词
+        // let input = prompt("请输入消息内容");
+        // //匹配：我草 卧槽 我艹 我cao
+        // let i = input.search(/([我卧]|wo)\s*([艹草操槽]|cao)/i);
+        // if (i != -1) {
+        //     document.write(`<h1>存在敏感词，不能发送</h1>`)
+        // } else {
+        //     document.write(`<h1>然哥说：你家真大，${input}</h1>`)
+        // }
+        let str = 'PAOMO@';
+        console.log(str.search(/^(?![a-z0-9]+$)(?![A-Za-z]+$)[A-Za-z0-9]+$/));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="d1">
+        <li>12</li>
+        <li>34</li>
+        <li>22</li>
+        <li>42</li>
+    </ul>
+    <script>
+        //需求：只保留ul中的内容
+        //1：获取ul对象
+        let ul = document.getElementById("d1");
+        //2:获取ul的内容
+        let html = ul.innerHTML;
+        //3:去头尾 这样才能组成有效规律
+        html = html.replace(/^\s*<li>|<\/li>\s*$/g,"");
+        //4:去</li>  <li>  并且最终结果返回数组
+        //把正则当作一个分隔符 切割成数组
+        let arr = html.split(/<\/li>\s*<li>/);
+        console.log(arr);
+        
+
+
+
+        // //分割:将一个特定的分隔符，把字符串分成多段 返回值 是数组
+        // let str = 'wo shi cheng wei';
+        // let arr = str.split(' ');
+        // let str1 = 'helloword'
+        
+        // console.log(str1.split(""));
+        
+        // //把邮箱切割成用户名 + 域名
+        // (()=>{
+        //     let str = "692168085@qq.com";
+        //     let arr = str.split("@");
+        //     console.log(arr);
+        // })()
+
+
+       
+        // (()=>{
+        //     //字符串翻转
+        //     let str = "chengwei";
+        //     //翻转api只能数组使用 因str是字符串不能使用 
+        //     //str先打散成数组 然后调用翻转
+        //     str = str.split("");
+        //     //str变成数组后 可使用reverse翻转api
+        //     str.reverse();
+        //     //把数组专程字符串 join 返回值 字符串
+        //    str = str.join("");
+        //     console.log(str);
+        // })()
+
+
+        // (function(){
+        //     //复杂切割：将正则表达式当作分割符切割
+        //     let str = 'you can you up';
+        //     //把所有单词第二个字母替换成大写qu
+        //     //1：取首字母
+        //     let first = str.match(/\b[a-z]/ig);
+        //     //2：把每个首字母删除
+        //     let last = str.split(/\b[a-z]/);
+        //     last = last.join("");
+        //     //3:把last每个首字母大写
+        //     last = last.replace(/\b[a-z]/g,function(keyword){
+        //         return keyword.toUpperCase();
+        //     });
+        //     //把字符串转成数组
+        //     last = last.split(" ");
+            
+        //     let newArr="";
+        //     //把first + last 合并
+        //     for (var i =0; i < first.length; i++) {
+        //         newArr += first[i] + last[i] + " "
+        //     }
+        //     console.log(newArr);
+        // })()
+    </script>
+</body>
+</html>
